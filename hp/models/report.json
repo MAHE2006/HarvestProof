@@ -1,0 +1,133 @@
+{
+  "trained_at": "2026-10-26 08:54",
+  "images": 6393,
+  "skipped_no_leaf": 428,
+  "train": 4169,
+  "val": 895,
+  "test": 901,
+  "model": "per-crop gradient boosting on lesion-geometry and colour features (no neural network)",
+  "crops": {
+    "chilli": {
+      "test_images": 79,
+      "temperature": 4.25,
+      "accept_threshold": 0.99,
+      "test_top1_accuracy": 0.5569620253164557,
+      "test_coverage_at_threshold": 0.0,
+      "test_precision_at_threshold": null,
+      "test_ece": 0.10893078265698647,
+      "per_class_recall": {
+        "chilli_cercospora": 0.5714285714285714,
+        "chilli_healthy": 0.5,
+        "chilli_murda": 0.3125,
+        "chilli_nutritional": 0.625,
+        "chilli_powdery": 0.75
+      },
+      "confusion": {
+        "chilli_cercospora": {
+          "chilli_cercospora": 12,
+          "chilli_healthy": 0,
+          "chilli_murda": 5,
+          "chilli_nutritional": 3,
+          "chilli_powdery": 1
+        },
+        "chilli_healthy": {
+          "chilli_cercospora": 1,
+          "chilli_healthy": 5,
+          "chilli_murda": 2,
+          "chilli_nutritional": 1,
+          "chilli_powdery": 1
+        },
+        "chilli_murda": {
+          "chilli_cercospora": 4,
+          "chilli_healthy": 3,
+          "chilli_murda": 5,
+          "chilli_nutritional": 2,
+          "chilli_powdery": 2
+        },
+        "chilli_nutritional": {
+          "chilli_cercospora": 2,
+          "chilli_healthy": 0,
+          "chilli_murda": 2,
+          "chilli_nutritional": 10,
+          "chilli_powdery": 2
+        },
+        "chilli_powdery": {
+          "chilli_cercospora": 2,
+          "chilli_healthy": 1,
+          "chilli_murda": 0,
+          "chilli_nutritional": 1,
+          "chilli_powdery": 12
+        }
+      },
+      "warning": "Target precision 0.9 not reached on validation, so the photo alone is never treated as confident for chilli. The app will ask questions instead."
+    },
+    "tea": {
+      "test_images": 822,
+      "temperature": 2.0,
+      "accept_threshold": 0.74,
+      "test_top1_accuracy": 0.7652068126520681,
+      "test_coverage_at_threshold": 0.6034063260340633,
+      "test_precision_at_threshold": 0.8850806451612904,
+      "test_ece": 0.013169792254996383,
+      "per_class_recall": {
+        "tea_algalspot": 0.7606837606837606,
+        "tea_brownblight": 0.84,
+        "tea_greyblight": 0.6474820143884892,
+        "tea_healthy": 0.8466666666666667,
+        "tea_helopeltis": 0.777027027027027,
+        "tea_redspot": 0.7202797202797203
+      },
+      "confusion": {
+        "tea_algalspot": {
+          "tea_algalspot": 89,
+          "tea_brownblight": 1,
+          "tea_greyblight": 23,
+          "tea_healthy": 2,
+          "tea_helopeltis": 2,
+          "tea_redspot": 0
+        },
+        "tea_brownblight": {
+          "tea_algalspot": 3,
+          "tea_brownblight": 105,
+          "tea_greyblight": 9,
+          "tea_healthy": 1,
+          "tea_helopeltis": 2,
+          "tea_redspot": 5
+        },
+        "tea_greyblight": {
+          "tea_algalspot": 35,
+          "tea_brownblight": 6,
+          "tea_greyblight": 90,
+          "tea_healthy": 0,
+          "tea_helopeltis": 2,
+          "tea_redspot": 6
+        },
+        "tea_healthy": {
+          "tea_algalspot": 3,
+          "tea_brownblight": 0,
+          "tea_greyblight": 3,
+          "tea_healthy": 127,
+          "tea_helopeltis": 10,
+          "tea_redspot": 7
+        },
+        "tea_helopeltis": {
+          "tea_algalspot": 2,
+          "tea_brownblight": 1,
+          "tea_greyblight": 3,
+          "tea_healthy": 12,
+          "tea_helopeltis": 115,
+          "tea_redspot": 15
+        },
+        "tea_redspot": {
+          "tea_algalspot": 3,
+          "tea_brownblight": 4,
+          "tea_greyblight": 12,
+          "tea_healthy": 7,
+          "tea_helopeltis": 14,
+          "tea_redspot": 103
+        }
+      },
+      "warning": null
+    }
+  }
+}

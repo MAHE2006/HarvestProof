@@ -1,0 +1,48 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>HarvestProof: safe to harvest, and proof of it</title><link rel="stylesheet" href="style.css"></head><body><div class="w">
+<header class="top"><div class="logo"><i>H</i>HarvestProof</div><div class="row"><button class="link" id="nhow">How it works</button><span id="who" class="sm mu"></span><button class="gh s" id="so" hidden>Sign out</button></div></header>
+
+<section id="welcome"><div class="hero"><h1>Know it is safe to harvest, and prove it.</h1>
+<p>HarvestProof helps a farmer answer four questions before selling a crop: <b>What is wrong with my leaf? Is my pesticide pack genuine? Which spray fits my harvest date? When can I safely harvest?</b></p></div>
+<div class="steps4"><div class="st"><span class="ic">📷</span><b>1. Check the leaf</b><span>Take a photo and answer a few simple questions. We tell you the likely problem, or say we are not sure.</span></div>
+<div class="st"><span class="ic">🔎</span><b>2. Check the pack</b><span>Type or scan the code on the pesticide pack to see if it is registered, in date and not copied.</span></div>
+<div class="st"><span class="ic">🧪</span><b>3. Choose the spray</b><span>See only sprays whose label lists your problem on your crop, and that wait long enough before harvest.</span></div>
+<div class="st"><span class="ic">📋</span><b>4. Get the passport</b><span>A page with your earliest safe harvest date and every spray, which a buyer can open and check.</span></div></div>
+<div class="g2" style="margin-top:22px"><div class="card"><h2>Try it now</h2><p class="mu">No sign-up needed. The demo comes with sample photos and sample pack codes so you can see every step.</p><button class="big" id="demo">Start the demo</button><p class="sm mu">Advice only, not a laboratory certificate. Always follow the product label.</p></div>
+<div class="card"><div class="tabs"><button class="on" id="tin">Sign in</button><button id="tup">Create account</button></div><label>Email<input id="em" type="email" autocomplete="username"></label><label>Password (8 or more characters)<input id="pw" type="password" autocomplete="current-password"></label>
+<div class="r2" id="reg" hidden><label>Your name<input id="nm"></label><label>District<input id="di"></label></div><button id="go">Sign in</button><div class="note bad" id="lme" hidden></div></div></div></section>
+
+<main id="app" hidden>
+<div class="note info" id="demobar" hidden><b>Demo mode.</b> Your demo data stays on this server for this browser only. <button class="link" id="mk">Create a real account</button></div>
+<nav class="journey" id="journey" aria-label="Steps"></nav>
+
+<section id="p1"><div class="intro"><h2>Step 1. Check the leaf</h2><p>Choose your crop, then show us a leaf. A photo helps, but you can also just answer the questions. We ask only the questions that matter most.</p></div>
+<div class="g2"><div class="card"><h3>A. Which crop?</h3><div class="crops" id="crops"></div>
+<h3>B. Show us the leaf</h3><label class="drop" for="img"><span style="font-size:1.8rem">📷</span><b>Take a photo or upload one</b><span class="sm mu">One leaf, close up, in good light, on a plain background</span></label><input id="img" type="file" accept="image/*" capture="environment" hidden>
+<div><p class="sm mu" style="margin-bottom:6px">No photo handy? Try a sample (real dataset photos the system never trained on):</p><div class="thumbs" id="samples"></div></div>
+<div id="pv" hidden class="col"><img id="pvimg" alt="Your leaf photo"><div class="chips" id="meas"></div></div><div class="note info" id="nomodel" hidden></div></div>
+<div class="card"><h3>C. What we think</h3><div id="dx" class="col"></div></div></div></section>
+
+<section id="p2" hidden><div class="intro"><h2>Step 2. Check the pesticide pack</h2><p>Every genuine pack has a printed batch code. We check that it is real, registered, not expired and not being copied. Do this <b>before</b> you spray.</p></div>
+<div class="g2"><div class="card"><label>Batch code printed on the pack<input id="code" autocomplete="off" spellcheck="false" placeholder="DEMOTR-00001-XXXXXXXX"></label>
+<div class="row"><button id="vb">Check this pack</button><button class="gh" id="sc">Scan the QR code</button></div><video id="vid" playsinline hidden style="width:100%;border-radius:10px"></video>
+<div id="democ" hidden><p class="sm mu" style="margin-bottom:6px">No pack? Try a demo code. The colour shows what to expect:</p><div class="demo" id="demol"></div></div></div>
+<div class="card" id="vres"><div class="empty"><span style="font-size:2rem">🔎</span>The result and the label details for the pack will appear here.</div></div></div></section>
+
+<section id="p3" hidden><div class="intro"><h2>Step 3. Choose and log the spray</h2><p>We list only sprays whose official label names your problem on your crop. Sprays that would make you wait past your harvest date are set aside. After you spray, log it so your passport is updated.</p></div>
+<div class="g2"><div class="card"><div class="r2"><label>Field name<input id="field" value="Plot 1" maxlength="30"></label><label>Crop<select id="pcrop"></select></label></div>
+<div class="r2"><label>Problem<select id="pdis"></select></label><label>Planned harvest date<input id="hd" type="date"></label></div><button id="pb">Show my spray options</button><div id="ctx" class="sm mu"></div>
+<details><summary>Already sprayed? Log it without a recommendation</summary><div class="col" style="margin-top:8px"><p>Uses the pack you checked in step 2.</p><label>Spray date<input id="sd2" type="date"></label><button class="gh" id="log2">Log spray</button></div></details></div>
+<div class="col" id="opts"><div class="card empty"><span style="font-size:2rem">🧪</span>Pick your problem and press the button.</div></div></div></section>
+
+<section id="p4" hidden><div class="intro"><h2>Step 4. Your harvest passport</h2><p>This shows the earliest day each field is safe to harvest, based on the label waiting period of every spray you logged. Share the link so a buyer can check it.</p></div><div class="col" id="pass"></div></section>
+</main>
+
+<section id="how" hidden><div class="intro"><h2>How HarvestProof works</h2><p>Plain answers to what each part does, and what it does not do.</p></div><div class="col">
+<div class="card"><h3>The leaf check (not a neural network)</h3><p>The photo is split into leaf, spots, yellow and white areas. We measure how many spots there are and whether they are long and thin or round. A trained model turns those measurements into probabilities. Your answers to simple questions are added as extra evidence, and we always ask the question that removes the most doubt. If the evidence is not clear we say <b>uncertain</b> instead of guessing.</p><p class="sm mu">Photo analysis exists for <b>tea</b> and <b>chilli</b>, trained on public photos. Rice and grapes use your answers only, because we do not have photos for them yet.</p></div>
+<div class="card"><h3>The pack check</h3><p>Each pack code ends in a signature that only the issuer can create, so forged or mistyped codes fail. We also check the batch is registered and in date, and flag a code that has been scanned in many districts within a short time, which suggests copies.</p></div>
+<div class="card"><h3>The spray options</h3><p>Products and waiting periods come from India's official list of registered pesticide uses. We only show products whose label names your problem on your crop, drop those that would make you harvest too early, and avoid repeating the same mode of action (this slows resistance).</p></div>
+<div class="card"><h3>The passport</h3><p>Safe harvest day = last spray date + the longest label waiting period. It also warns when the EU limit for a product is very strict, because meeting India's waiting period does not guarantee passing an EU residue test.</p></div>
+<div class="card"><h3>Words used here</h3><p><b>Waiting period:</b> days that must pass between the last spray and harvest. <b>Mode of action:</b> how a chemical kills the disease. Using the same one repeatedly makes diseases resistant. <b>Residue limit (MRL):</b> the most chemical allowed on food that is sold.</p></div>
+<div class="card"><h3>What it is not</h3><p>It is advice, not a laboratory certificate, and not a replacement for an agriculture officer. Photo accuracy is measured on public dataset photos and will be lower on your own field photos. Label data was transcribed from official lists and must be checked against the product label.</p></div></div></section>
+<footer>Sample and training photos: public tea and chilli leaf datasets, CC BY 4.0 (see DATA_SOURCES.md). Pesticide label data: CIB&amp;RC, Government of India. EU limits: APEDA list for green chilli.</footer></div>
+<div class="toast" id="toast" hidden role="status"></div><script src="app.js"></script></body></html>

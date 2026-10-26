@@ -1,0 +1,18 @@
+class_id,crop,name,prior
+rice_blast,rice,Rice blast,1
+rice_brownspot,rice,Rice brown spot,1
+rice_healthy,rice,Healthy rice leaf,1
+chilli_cercospora,chilli,Chilli cercospora leaf spot,1
+chilli_powdery,chilli,Chilli powdery mildew,1
+chilli_murda,chilli,"Chilli murda (mites, thrips, virus)",1
+chilli_nutritional,chilli,Chilli nutrient deficiency,1
+chilli_healthy,chilli,Healthy chilli leaf,1
+grapes_downy,grapes,Grape downy mildew,1
+grapes_powdery,grapes,Grape powdery mildew,1
+grapes_healthy,grapes,Healthy grape leaf,1
+tea_greyblight,tea,Tea gray blight,1
+tea_brownblight,tea,Tea brown blight,1
+tea_algalspot,tea,Tea algal spot,1
+tea_redspot,tea,Tea red spot,1
+tea_helopeltis,tea,Tea Helopeltis (insect damage),1
+tea_healthy,tea,Healthy tea leaf,1

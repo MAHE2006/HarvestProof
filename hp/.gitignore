@@ -1,0 +1,6 @@
+.venv/
+*.db
+__pycache__/
+.env
+data/images/
+data/demo_images/

@@ -1,0 +1,28 @@
+# Generic active ingredient + formulation (not brands). moa = FRAC code(s) from general knowledge; verify against the FRAC list.
+code,name,moa
+TRICY75,Tricyclazole 75% WP,16.1
+ISOPRO40,Isoprothiolane 40% EC,6
+KASU3,Kasugamycin 3% SL,24
+PICOX22,Picoxystrobin 22.52% SC,11
+PYRA100,Pyraclostrobin 100 g/L CS,11
+PROCH39,Prochloraz 39.6% EC,3
+TEBU259,Tebuconazole 25.9% EC,3
+EDIPH50,Edifenphos 50% EC,6
+METIR70,Metiram 70% WG,M3
+AZOX23,Azoxystrobin 23% SC,11
+BUPI267,Bupirimate 26.7% EC,8
+HEXA2,Hexaconazole 2% SC,3
+HEXA75,Hexaconazole 75% WG,3
+TEBU3839,Tebuconazole 38.39% SC,3
+METRA500,Metrafenone 500 g/L SC,50
+POLYOXD,Polyoxin D zinc salt 5% SC,19
+SULF80WG,Sulphur 80% WG,M2
+CYAZO345,Cyazofamid 34.5% SC,21
+MANDI234,Mandipropamid 23.4% SC,40
+CUOH6141,Copper hydroxide 61.41% WG,M1
+HEXA5SC,Hexaconazole 5% SC,3
+DIMETH50,Dimethomorph 50% WP,40
+CYFLU5,Cyflufenamid 5% EW,U06
+KRESO443,Kresoxim-methyl 44.3% SC,11
+CARBMANC,Carbendazim 12% + Mancozeb 63% WP,1+M3
+HEXAZINEB,Hexaconazole 4% + Zineb 68% WP,3+M3
